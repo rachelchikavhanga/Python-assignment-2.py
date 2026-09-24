@@ -1,0 +1,5 @@
+# Question 2: SQLite Database Operations in Python
+Connecting to and manipulating a SQLite database in Python requires specific foundational steps using the built-in sqlite3 module:
+ * sqlite3.connect(database_name): Establishes a database connection object to the specified SQLite file (or creates it if it does not exist). It acts as the primary communication bridge between the Python program and the database engine. Passing ":memory:" creates a temporary database stored entirely in RAM.
+ * Cursor Object (connection.cursor()): Acts as a control structure to execute SQL statements and retrieve results. The cursor maintains context across operations, executing queries via .execute() or .executemany() and fetching query results using methods such as .fetchone(), .fetchall(), or .fetchmany().
+ * connection.commit(): Saves (commits) all transactions performed during the connection session to the persistent database file. Without calling .commit(), structural schema modifications or data insertions/updates/deletions made during the execution context remain temporary and are rolled back when the connection closes.

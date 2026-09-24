@@ -1,0 +1,49 @@
+class Car:
+    def _init_(self, make: str, model: str, year: int):
+        self.make = make
+        self.model = model
+        self.year = year
+  def get_description(self) -> str
+    """Returns a formatted basic description of the car."""
+        return f"{self.year} {self.make} {self.model}"
+class ElectricCar(Car):
+ def _init_( self,
+        make: str,
+        model: str,
+        year: int,
+        battery_size: int,
+        estimated_range: int = 300,
+        charging_time_hours: float = 8.0,):
+ # Initialize attributes from the base class
+        super()._init_(make, model, year)
+        # Introduce specific ElectricCar attributes
+        self.battery_size = battery_size  # Battery capacity in kWh
+        self.estimated_range = estimated_range  # Estimated range in miles/km
+        self.charging_time_hours = charging_time_hours  # Charge time from 0-100%
+  def get_description(self) -> str:
+ """Overrides base method to include battery size information."""
+        base_desc = super().get_description()
+ return f"{base_desc} (Battery: {self.battery_size} kWh)"
+ def get_battery_info(self) -> str:
+  """Returns detailed specs regarding the electric battery features."""
+return (f"Battery Specifications:\n"
+    f" - Capacity: {self.battery_size} kWh\n"
+    f" - Estimated Range: {self.estimated_range} miles\n"
+    f" - Full Charge Time: approx. {self.charging_time_hours} hours")
+# Demonstration
+if _name_ == "_main_":
+ standard_car = Car("Toyota", "Camry", 2022)
+  print("Standard Car Description:")
+ print(standard_car.get_description())
+ print("\n" + "=" * 40 + "\n")
+     ev = ElectricCar( make="Tesla", model="Model 3",year=2024,
+battery_size=75,)
+  estimated_range=341,charging_time_hours=6.5,
+ print("EV Description (Overridden Method):")
+    print(ev.get_description())
+ print("\nEV Detailed Battery Features:")
+    print(ev.get_battery_info())
+ print("EV Description (Overridden Method):")
+    print(ev.get_description())
+print("\nEV Detailed Battery Features:")
+ print(ev.get_battery_info())

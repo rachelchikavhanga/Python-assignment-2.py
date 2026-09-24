@@ -1,0 +1,16 @@
+Question 3: List Comprehensions in Python
+Purpose and Syntax
+A list comprehension provides a concise, readable, and pythonic way to construct a new list by applying an expression to each item in an existing iterable, optionally filtering elements based on a condition.
+Syntax:
+[expression for item in iterable if condition]
+
+ * expression: The value or operation to evaluate and include in the output list.
+ * item: The variable representing elements drawn sequentially from the iterable.
+ * iterable: Any Python sequence or iterable object (e.g., list, tuple, range).
+ * if condition (optional): A boolean filter that includes the item only when it evaluates to True.
+Code Implementation
+# List comprehension generating odd numbers between 1 and 50 that are divisible by 3
+odd_divisible_by_3 = [num for num in range(1, 51) if num % 2 != 0 and num % 3 == 0]
+
+print(odd_divisible_by_3)
+# Output: [3, 9, 15, 21, 27, 33, 39, 45]
